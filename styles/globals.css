@@ -1,27 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+::-webkit-scrollbar {
+  display: none;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Remove the spinner for Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* This hides the spinner */
+}
+
+/*  */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.slider-container {
+  width: 100%;
+  overflow: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.slider-track {
+  display: flex;
+  gap: 100px;
+  width: calc(300%); /* Ensure width is large enough to cover repeated images */
+  animation: scroll 30s linear infinite; /* Adjust timing for smooth speed */
+}
+
+.slider-image {
+  flex-shrink: 0;
+  width: 150px; /* Adjust the width to suit the images */
+}
+
+/*  */
+@font-face {
+  font-family: "Metropolis";
+  src: url("/font/Metropolis-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }

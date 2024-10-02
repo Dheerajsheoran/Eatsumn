@@ -7,9 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        DMSans: ["DM Sans", "sans-serif"],
+        Atma: ["Atma", "system-ui"],
+        Metropolis: ["Metropolis", "sans-serif"],
       },
     },
   },
